@@ -6,7 +6,7 @@ import ListItem from "./ListItem";
 const BorderedDiv = styled.div`
     border:2px solid black;
     border-radius:10px; 
-    max-height:45vh;
+    max-height:42.5vh;
     background-color: rgba(255,255,255,0.5);
     width:50%;
     margin:3% auto;
@@ -36,7 +36,7 @@ const ListWrapper = (props) =>{
             else{axios.get(array[index]).then((val)=>{tempIndex.push(val.data); setDataList(tempIndex); props.setLoading(false);console.log(dataList)})}
         }
         recursiveCallback(props.data.length-1,props.data)
-    },[dataList,props])
+    },[])
     return(
         <div >
             <ListTypeSelector onClick={()=>props.setViewSpecificList()}>{props.listType}:</ListTypeSelector>
