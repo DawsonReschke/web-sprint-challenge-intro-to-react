@@ -28,15 +28,18 @@ transition: background-color 0.2s;
 
 const ListWrapper = (props) =>{
     const [dataList,setDataList] = useState([]); 
+    const {setLoading, data} = props
     useEffect(()=>{
-        props.setLoading(true);
+        const changeIsLoading = (value)=>setLoading(value); 
+        const changeDataArr = (array)=>setDataList(array); 
+        changeIsLoading(true)
         let tempIndex = []
         const recursiveCallback = (index,array)=> {
             if(index > 0){axios.get(array[index]).then((val)=>{tempIndex.push(val.data); recursiveCallback(index-1,array)})}
-            else{axios.get(array[index]).then((val)=>{tempIndex.push(val.data); setDataList(tempIndex); props.setLoading(false);console.log(dataList)})}
+            else{axios.get(array[index]).then((val)=>{tempIndex.push(val.data); changeDataArr(tempIndex); changeIsLoading(false)})}
         }
-        recursiveCallback(props.data.length-1,props.data)
-    },[])
+        recursiveCallback(data.length-1,data)
+    },[data])
     return(
         <div >
             <ListTypeSelector onClick={()=>props.setViewSpecificList()}>{props.listType}:</ListTypeSelector>

@@ -20,7 +20,7 @@ const Movie = (props)=>{
         <BoarderBox >
             {props.movie.title && <Title onClick={()=>props.setViewing()} title={props.movie.title}></Title>}
             {props.expanded && <GeneralMovieData director={props.movie.director} producer={props.movie.producer} opening_crawl={props.movie.opening_crawl} release_date={props.movie.release_date}></GeneralMovieData>}
-            {props.expanded && !viewSpecificList? Object.keys(props.movie).filter(data=>!excludedButtonProps.includes(data)).map((val)=><OptionButton clickHandler={()=>setViewSpecificList(val)} name={val}></OptionButton>)
+            {props.expanded && !viewSpecificList? Object.keys(props.movie).filter(data=>!excludedButtonProps.includes(data)).map((val)=><OptionButton key={val} clickHandler={()=>setViewSpecificList(val)} name={val}></OptionButton>)
             : props.expanded && <ListWrapper setViewSpecificList={()=>setViewSpecificList(null)} setLoading={props.setLoading} listType={viewSpecificList} data={props.movie[viewSpecificList]}></ListWrapper>
             }
         </BoarderBox>

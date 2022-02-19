@@ -1,13 +1,13 @@
 import React,{useEffect, useState} from 'react';
 import './App.css';
 import axios from 'axios';
-import Movie from './components/Movie';
+// import Movie from './components/Movie';
 import styled from 'styled-components';
 import Character from './components/Character';
-const API_URL = 'https://swapi.dev/api/films'
+// const API_URL = 'https://swapi.dev/api/films'
 
 const ForcedPass = styled.div`
-
+visibility:hidden;
 `
 
 const ForcedHightDiv = styled.div`
@@ -28,12 +28,12 @@ const App = () => {
   return (
     <ForcedHightDiv className="App">
       <h1 className="Header">Movies</h1>
-      {/* {starWarsMovies!=null && !starWarsMovies[currentViewingMovie] ? <div>{((starWarsMovies)).map((val,index)=><Movie setLoading={(d)=>setIsLoading(d)} setViewing={()=>{setCurrentViewingMovie(index);console.log(`you pressed: ${val.title}`)}} movie={val} key={val.title}></Movie>)}</div>
+      {/* {starWarsMovies!=null && !starWarsMovies[currentViewingMovie] ? <div>{((starWarsMovies)).map((val,index)=><Movie setLoading={(d)=>setIsLoading(d)} setViewing={()=>{setCurrentViewingMovie(index)}} movie={val} key={val.title}></Movie>)}</div>
       : starWarsMovies!=null&&<Movie expanded setLoading={(d)=>setIsLoading(d)} setViewing={()=>setCurrentViewingMovie(null)} movie={starWarsMovies[currentViewingMovie]} key={starWarsMovies[currentViewingMovie].title}></Movie>  
-      }
-      {isLoading && <h1> LOADING </h1>} */}
+      } */}
+      {/* {isLoading && <h1> LOADING </h1>} */}
       <ForcedPass>
-        {forcePassCharacterList.map((c,i)=><Character  character={c}/>)}
+        { forcePassCharacterList.map((c,i)=><Character key={i} character={c}/>)}
       </ForcedPass>
     </ForcedHightDiv>
   );

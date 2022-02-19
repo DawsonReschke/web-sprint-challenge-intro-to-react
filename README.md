@@ -79,6 +79,10 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
-1. Describe component state.
-1. Describe props.
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+  a) ReactJs is a web framework that solves all of the problems related to state management in vanilla js. State management requires you to keep track of each individual element on the page that could possibly change. React does this for us. 
+2. Describe component state.
+  b) In react all components carry a state that can be mutated and rerendered. 
+3. Describe props.
+  c) props stands for `properties`, which is any data that is passed from one component down to its child component. 
+4. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+  d) Side effects are any asynchronous events. Using the useEffect method we can sync side effects with the component states. 
