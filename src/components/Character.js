@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 const ForcePass= styled.div`
 border: 1px solid lemonchiffon;
-visibility: hidden; 
 border-radius: 20%;
 margin: 5%
 `
